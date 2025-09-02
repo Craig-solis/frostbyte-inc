@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
-@media (prefers-color-scheme) {
-  :root {
-    --background: #000000;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #00030e;
+  --foreground: #ffffff;
+}
+
+.dark {
+  --background: #00050e;
+  --foreground: #ededed;
 }
 
 body {
@@ -12,3 +15,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Tailwind dark mode example 
+.theme-demo {
+  @apply bg-white text-black dark:bg-gray-900 dark:text-white;
+}
+*/

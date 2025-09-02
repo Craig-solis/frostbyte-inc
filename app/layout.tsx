@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sourceCodePro.variable} antialiased`}
+        className={`${sourceCodePro.variable} antialiased border-1 border-gray-700`}
       >
         <Nav />
         {children}
