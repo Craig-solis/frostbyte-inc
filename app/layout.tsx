@@ -9,8 +9,9 @@ const sourceCodePro = Source_Code_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Craig S Dev",
-  description: "Portfolio for Craig S Web Development",
+  title: "FrostByte Dev",
+
+  description: "Portfolio for FrostByte Web Development",
 };
 
 export default function RootLayout({
@@ -20,11 +21,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="/images/FrostByte_logo_ABV.png"
+        />
+      </head>
       <body
-        className={`${sourceCodePro.variable} antialiased border-1 border-gray-700`}
+        className={`${sourceCodePro.variable} antialiased border-1 border-gray-700 min-h-screen flex flex-col`}
       >
         <Nav />
-        {children}
+        <main className="flex-1 w-full">{children}</main>
+        <footer className="border-t border-gray-700 py-4">
+          <div className="container mx-auto text-center">
+            <p>
+              &copy; {new Date().getFullYear()} FrostByte Dev. All rights
+              reserved.
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   );
