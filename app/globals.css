@@ -3,10 +3,10 @@
 :root {
   --background: radial-gradient(circle at 100% 100%, #16ffd8 -250%, #000000);
   --foreground: #ffffff;
-  --accent: #16FFD8;
-  --border: #63636391;
+  --accent: #16ffd8;
+  --greyed: #63636391;
   --text-primary: #ffffff;
-  --text-active: #16FFD8;
+  --text-active: #16ffd8;
 }
 
 .dark {
@@ -25,3 +25,7 @@ body {
   @apply bg-white text-black dark:bg-gray-900 dark:text-white;
 }
 */
+
+.text-glow-active {
+  text-shadow: 0 0 2px var(--text-active), 0 0 10px var(--text-active);
+}

@@ -17,8 +17,8 @@ export default function Nav() {
 
   const pathname = usePathname();
   return (
-    <nav className="h-16 flex relative border-b border-[var(--border)]">
-      <div className="h-full flex aspect-[2.5] relative min-w-[80px] max-w-[350px] border-r border-[var(--border)] w-[25%]">
+    <nav className="h-16 flex relative border-b border-[var(--greyed)]">
+      <div className="h-full flex aspect-[2.5] relative min-w-[80px] max-w-[350px] border-r border-[var(--greyed)] w-[25%]">
         <Image
           src="/images/Light_Logo_Full.png"
           alt="Logo"
@@ -33,13 +33,13 @@ export default function Nav() {
         {leftNavLinks.map((link) => (
           <li
             key={link.href}
-            className="h-full flex items-center justify-center px-6 border-r border-[var(--border)]"
+            className="h-full flex items-center justify-center px-6 border-r border-[var(--greyed)]"
           >
             <Link
               href={link.href}
               className={
                 pathname === link.href
-                  ? "text-[var(--text-active)] font-bold"
+                  ? "text-[var(--text-active)] font-bold text-glow-active"
                   : "text-[var(--text-primary)] hover:[var(--text-active)]"
               }
             >
@@ -49,13 +49,13 @@ export default function Nav() {
         ))}
         <li
           key={rightNavLink.href}
-          className="h-full flex items-center justify-center px-6 border-l border-[var(--border)] ml-auto"
+          className="h-full flex items-center justify-center px-6 border-l border-[var(--greyed)] ml-auto"
         >
           <Link
             href={rightNavLink.href}
             className={
               pathname === rightNavLink.href
-                ? "text-[var(--text-active)] font-bold"
+                ? "text-[var(--text-active)] font-bold text-glow-active"
                 : "text-[var(--text-primary)] hover:[var(--text-active)]"
             }
           >
@@ -69,9 +69,9 @@ export default function Nav() {
         onClick={() => setMenuOpen((open) => !open)}
         aria-label="Toggle navigation menu"
       >
-        <span className="block w-6 h-0.5 er-[var(--border)] mb-1"></span>
-        <span className="block w-6 h-0.5 er-[var(--border)] mb-1"></span>
-        <span className="block w-6 h-0.5 er-[var(--border)]"></span>
+        <span className="block w-6 h-0.5 bg-[var(--greyed)] mb-1"></span>
+        <span className="block w-6 h-0.5 bg-[var(--greyed)] mb-1"></span>
+        <span className="block w-6 h-0.5 bg-[var(--greyed)]"></span>
       </button>
       {/* Dropdown menu for mobile */}
       {menuOpen && (
@@ -83,8 +83,8 @@ export default function Nav() {
                 onClick={() => setMenuOpen(false)}
                 className={
                   pathname === link.href
-                    ? "text-blue-500 font-bold"
-                    : "text-gray-300 hover:text-blue-400"
+                    ? "text-[var(--text-active)] font-bold text-glow-active"
+                    : "text-[var(--text-primary)] hover:[var(--text-active)]"
                 }
               >
                 {link.label}
