@@ -14,7 +14,7 @@ export default function Home() {
       <h1 className="w-full flex flex-col">
         <span className="text-3xl text-[var(--greyed)]">Welcome to</span>
         <span className="text-5xl font-bold mt-2 text-[var(--text-active)] text-glow-active">FrostByte DevSecOps</span>
-        <span className="text-2xl text-[var(--greyed)] mt-4"> {`>`} Full-Stack Development</span>
+        <span className="text-2xl text-[var(--greyed)] mt-4"> {`>`} Full-Stack Developments</span>
       </h1>
       <SyntaxHighlighter
         language="typescript"
