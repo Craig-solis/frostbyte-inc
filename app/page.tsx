@@ -6,6 +6,7 @@ const codeString = `
 function greet(name) {
   return 'Hello, ' + name + '!';
 }
+console.log(greet('User'));
 `;
 
 export default function Home() {

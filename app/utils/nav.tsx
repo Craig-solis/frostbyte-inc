@@ -73,39 +73,47 @@ export default function Nav() {
         <span className="block w-6 h-0.5 bg-[var(--greyed)] mb-1"></span>
         <span className="block w-6 h-0.5 bg-[var(--greyed)]"></span>
       </button>
-      {/* Dropdown menu for mobile */}
-      {menuOpen && (
-        <ul className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-md flex flex-col md:hidden z-50">
-          {leftNavLinks.map((link) => (
-            <li key={link.href} className="px-6 py-3">
-              <Link
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className={
-                  pathname === link.href
-                    ? "text-[var(--text-active)] font-bold text-glow-active"
-                    : "text-[var(--text-primary)] hover:[var(--text-active)]"
-                }
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-          <li key={rightNavLink.href} className="px-6 py-3">
+      {/* Dropdown menu for mobile with smooth slide-down */}
+      <ul
+        className={`absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-md flex flex-col md:hidden z-50 transition-all duration-300 overflow-hidden ${
+          menuOpen
+            ? "max-h-96 opacity-100"
+            : "max-h-0 opacity-0 pointer-events-none"
+        }`}
+        style={{
+          // fallback for browsers that don't support max-h-96
+          transitionProperty: "max-height, opacity",
+        }}
+      >
+        {leftNavLinks.map((link) => (
+          <li key={link.href} className="px-6 py-3">
             <Link
-              href={rightNavLink.href}
+              href={link.href}
               onClick={() => setMenuOpen(false)}
               className={
-                pathname === rightNavLink.href
-                  ? "text-blue-500 font-bold"
-                  : "text-gray-300 hover:text-blue-400"
+                pathname === link.href
+                  ? "text-[var(--text-active)] font-bold text-glow-active"
+                  : "text-[var(--text-primary)] hover:[var(--text-active)]"
               }
             >
-              {rightNavLink.label}
+              {link.label}
             </Link>
           </li>
-        </ul>
-      )}
+        ))}
+        <li key={rightNavLink.href} className="px-6 py-3">
+          <Link
+            href={rightNavLink.href}
+            onClick={() => setMenuOpen(false)}
+            className={
+              pathname === rightNavLink.href
+                ? "text-blue-500 font-bold"
+                : "text-gray-300 hover:text-blue-400"
+            }
+          >
+            {rightNavLink.label}
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }
