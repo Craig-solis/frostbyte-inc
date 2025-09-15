@@ -65,7 +65,7 @@ export default function Nav() {
       </ul>
       {/* Hamburger button for mobile */}
       <button
-        className="md:hidden p-2 ml-auto mr-6 relative h-8 w-8 flex flex-col justify-center items-center"
+        className="md:hidden p-2 ml-auto relative h-8 w-12 flex flex-col justify-center items-center"
         onClick={() => setMenuOpen((open) => !open)}
         aria-label="Toggle navigation menu"
       >

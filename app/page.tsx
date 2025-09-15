@@ -31,7 +31,22 @@ export default function Home() {
       >
         {codeString}
       </SyntaxHighlighter>
-      <Post title='_Projects' desc='Check out some of my projects under the "_projects" tab' />
+      {/* Posts Section */}
+      <Post 
+        title='_Projects' 
+        desc='Check out some of my projects under the "_projects" tab'
+        link='/projects' 
+        />
+      <Post 
+        title='_About Me' 
+        desc='Learn more about me under the "_about-me" tab' 
+        link='/aboutme' 
+        />
+      <Post 
+        title='_Contact Me' 
+        desc='Feel free to reach out via the "_contact-me" tab' 
+        link='/contact' 
+        />
     </div>
   );
 }
