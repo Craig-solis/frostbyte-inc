@@ -65,23 +65,38 @@ export default function Nav() {
       </ul>
       {/* Hamburger button for mobile */}
       <button
-        className="md:hidden p-2 ml-auto"
+        className="md:hidden p-2 ml-auto relative h-8 w-8 flex flex-col justify-center items-center"
         onClick={() => setMenuOpen((open) => !open)}
         aria-label="Toggle navigation menu"
       >
-        <span className="block w-6 h-0.5 bg-[var(--greyed)] mb-1"></span>
-        <span className="block w-6 h-0.5 bg-[var(--greyed)] mb-1"></span>
-        <span className="block w-6 h-0.5 bg-[var(--greyed)]"></span>
+        <span
+          className={`absolute w-6 h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
+            menuOpen ? "rotate-45 top-4" : "top-4.5"
+          }`}
+          style={{ left: "0.5rem" }}
+        ></span>
+        <span
+          className={`absolute w-6 h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
+            menuOpen ? "opacity-0 left-4" : "top-6.5"
+          }`}
+          style={{ left: "0.5rem" }}
+        ></span>
+        <span
+          className={`absolute w-6 h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
+            menuOpen ? "-rotate-45 top-4" : "top-8.5"
+          }`}
+          style={{ left: "0.5rem" }}
+        ></span>
       </button>
       {/* Dropdown menu for mobile with smooth slide-down */}
       <ul
-        className={`absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-md flex flex-col md:hidden z-50 transition-all duration-300 overflow-hidden ${
+        className={`absolute top-full left-0 w-full h-screen bg-[var(--dark-bkgd)] shadow-md flex flex-col md:hidden z-50 transition-all duration-300 overflow-hidden ${
           menuOpen
-            ? "max-h-96 opacity-100"
+            ? "max-h-screen opacity-100"
             : "max-h-0 opacity-0 pointer-events-none"
         }`}
         style={{
-          // fallback for browsers that don't support max-h-96
+          // fallback for browsers that don't support max-h-screen
           transitionProperty: "max-height, opacity",
         }}
       >

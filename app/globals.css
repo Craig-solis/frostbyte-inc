@@ -6,11 +6,13 @@
   --accent: #16ffd8;
   --greyed: #747474bd;
   --text-primary: #ffffff;
+  --text-secondary: #a2ece0;
   --text-active: #16ffd8;
+  --dark-bkgd: #000f0e;
 }
 
 .dark {
-  --background: #00050e;
+  --background: #001614;
   --foreground: #ededed;
 }
 
