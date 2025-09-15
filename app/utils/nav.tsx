@@ -65,25 +65,25 @@ export default function Nav() {
       </ul>
       {/* Hamburger button for mobile */}
       <button
-        className="md:hidden p-2 ml-auto relative h-8 w-8 flex flex-col justify-center items-center"
+        className="md:hidden p-2 ml-auto mr-6 relative h-8 w-8 flex flex-col justify-center items-center"
         onClick={() => setMenuOpen((open) => !open)}
         aria-label="Toggle navigation menu"
       >
         <span
           className={`absolute w-6 h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
-            menuOpen ? "rotate-45 top-4" : "top-4.5"
+            menuOpen ? "rotate-45 top-6" : "top-5"
           }`}
           style={{ left: "0.5rem" }}
         ></span>
         <span
           className={`absolute w-6 h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
-            menuOpen ? "opacity-0 left-4" : "top-6.5"
+            menuOpen ? "opacity-0 left-6" : "top-7"
           }`}
           style={{ left: "0.5rem" }}
         ></span>
         <span
           className={`absolute w-6 h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
-            menuOpen ? "-rotate-45 top-4" : "top-8.5"
+            menuOpen ? "-rotate-45 top-6" : "top-9"
           }`}
           style={{ left: "0.5rem" }}
         ></span>
@@ -96,8 +96,8 @@ export default function Nav() {
             : "max-h-0 opacity-0 pointer-events-none"
         }`}
         style={{
-          // fallback for browsers that don't support max-h-screen
           transitionProperty: "max-height, opacity",
+          width: "100vw",
         }}
       >
         {leftNavLinks.map((link) => (
