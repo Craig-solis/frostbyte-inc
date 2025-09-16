@@ -18,12 +18,12 @@ export default function Nav() {
   const pathname = usePathname();
   return (
     <nav className="h-16 flex relative border-b border-[var(--greyed)]">
-      <div className="h-full flex aspect-[2.5] relative min-w-[80px] max-w-[350px] border-r border-[var(--greyed)] w-[25%]">
+      <div className="h-full flex aspect-[2.5] relative min-w-[80px] max-w-[350px] border-r border-[var(--greyed)] w-full p-2">
         <Image
           src="/images/Light_Logo_Full.png"
           alt="Logo"
           fill
-          className="flex object-contain object-left"
+          className="flex object-contain object-center"
           sizes="(max-width: 640px) 80px, (max-width: 1024px) 120px, 350px"
           priority
         />
@@ -65,27 +65,27 @@ export default function Nav() {
       </ul>
       {/* Hamburger button for mobile */}
       <button
-        className="md:hidden p-2 ml-auto relative h-8 w-12 flex flex-col justify-center items-center"
+        className="md:hidden p-2 ml-auto relative h-[90%] w-[10%] flex flex-col justify-center items-center"
         onClick={() => setMenuOpen((open) => !open)}
         aria-label="Toggle navigation menu"
       >
         <span
-          className={`absolute w-6 h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
+          className={`absolute w-[80%] h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
             menuOpen ? "rotate-45 top-6" : "top-5"
           }`}
-          style={{ left: "0.5rem" }}
+          style={{ right: "1.15rem" }}
         ></span>
         <span
-          className={`absolute w-6 h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
+          className={`absolute w-[80%] h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
             menuOpen ? "opacity-0 left-6" : "top-7"
           }`}
-          style={{ left: "0.5rem" }}
+          style={{ right: "1.15rem" }}
         ></span>
         <span
-          className={`absolute w-6 h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
+          className={`absolute w-[80%] h-0.5 bg-[var(--greyed)] transition-all duration-300 ${
             menuOpen ? "-rotate-45 top-6" : "top-9"
           }`}
-          style={{ left: "0.5rem" }}
+          style={{ right: "1.15rem" }}
         ></span>
       </button>
       {/* Dropdown menu for mobile with smooth slide-down */}

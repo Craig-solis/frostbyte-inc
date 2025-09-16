@@ -13,40 +13,61 @@ console.log(greet('User'));
 export default function Home() {
   return (
     <div className="flex flex-col justify-center w-full h-full flex-1 mt-25 px-6">
-      <h1 className="w-full flex flex-col">
-        <span className="text-3xl text-[var(--greyed)]">Welcome to</span>
-        <span className="text-4xl font-bold mt-2 text-[var(--text-active)] text-glow-active">
-          FrostByte Inc.
-        </span>
-        <span>Web Development Series</span>
-        <span className="text-2xl text-[var(--greyed)] mt-4">
-          {" "}
-          {`>`} Full-Stack Web Developments
-        </span>
-      </h1>
-      <SyntaxHighlighter
-        language="typescript"
-        className="hidden md:block rounded-lg flex w-[75%] md:w-[50%]"
-        style={oneDark}
-      >
-        {codeString}
-      </SyntaxHighlighter>
+      <div className="flex flex-col md:flex-row items-center justify-center mb-12">
+        <div className=" md:text-left md:w-[30%]">
+          <h1 className="flex flex-col w-full text-center">
+            <span className="text-3xl text-[var(--greyed)]">Welcome to</span>
+            <span className="text-4xl md:text-5xl font-bold mt-2 text-[var(--text-active)] text-glow-active">
+              FrostByte Inc.
+            </span>
+            <span className="text-xl">Web Development Series</span>
+            <span className="text-2xl text-[var(--greyed)] mt-4">
+              {`>`} Full-Stack Web Developments
+            </span>
+          </h1>
+        </div>
+        <div className=" hidden md:flex flex-col items-center justify-center gap-6 w-[50%]">
+          <SyntaxHighlighter
+            language="typescript"
+            className="hidden md:flex rounded-lg w-[80%] opacity-50"
+            style={oneDark}
+          >
+            {codeString}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter
+            language="typescript"
+            className="hidden md:flex rounded-lg w-[80%]"
+            style={oneDark}
+          >
+            {codeString}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter
+            language="typescript"
+            className="hidden md:flex rounded-lg w-[80%] opacity-50"
+            style={oneDark}
+          >
+            {codeString}
+          </SyntaxHighlighter>
+        </div>
+      </div>
       {/* Posts Section */}
-      <Post 
-        title='_Projects' 
-        desc='Check out some of my projects under the "_projects" tab'
-        link='/projects' 
+      <div className="w-full flex flex-col justify-center items-center mb-12">
+        <Post
+          title="_About Me"
+          desc='Learn more about me under the "_about-me" tab'
+          link="/aboutme"
         />
-      <Post 
-        title='_About Me' 
-        desc='Learn more about me under the "_about-me" tab' 
-        link='/aboutme' 
+        <Post
+          title="_Projects"
+          desc='Check out some of my projects under the "_projects" tab'
+          link="/projects"
         />
-      <Post 
-        title='_Contact Me' 
-        desc='Feel free to reach out via the "_contact-me" tab' 
-        link='/contact' 
+        <Post
+          title="_Contact Me"
+          desc='Feel free to reach out via the "_contact-me" tab'
+          link="/contact"
         />
+      </div>
     </div>
   );
 }
