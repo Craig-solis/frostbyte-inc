@@ -6,7 +6,8 @@
   --accent: #16ffd8;
   --greyed: #747474bd;
   --text-primary: #ffffff;
-  --text-secondary: #a2ece0;
+  --text-gradient: linear-gradient(180deg, #ffffff, #b6fff3);
+  --text-secondary: #c4fff5;
   --text-active: #16ffd8;
   --dark-bkgd: #000f0e;
 }
@@ -29,5 +30,17 @@ body {
 */
 
 .text-glow-active {
-  text-shadow: 0 0 2px var(--text-active), 0 0 10px var(--text-active);
+  text-shadow: 0 0 2px var(--text-primary), 0 0 7px var(--text-active);
+}
+
+.text-gradient {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.font-pixelify {
+  font-family: var(--font-pixelify-sans);
 }

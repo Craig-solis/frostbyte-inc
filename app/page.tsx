@@ -44,20 +44,17 @@ export default function HomePage() {
       {/* Hero Section */}
       <main className="flex-1">
         <section className="container mx-auto px-6 py-20 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="text-[var(--text-primary)]">FrostByte</span>
-            <span className="text-[var(--text-active)] text-glow-active">
-              {" "}
-              Inc.
-            </span>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 font-pixelify">
+            <span className="text-primary text-glow-active">FrostByte</span>
+            <span className="text-primary text-glow-active"> Inc.</span>
           </h1>
           <p className="text-xl md:text-2xl text-[var(--text-secondary)] mb-8 max-w-3xl mx-auto">
-            Professional Web Development & Digital Solutions
+            Professional Cyber Security Consulting, Web Development, and Digital
+            Solutions
           </p>
           <p className="text-lg text-[var(--greyed)] mb-12 max-w-2xl mx-auto">
             We create cutting-edge web applications, custom software solutions,
-            and provide digital transformation consulting for businesses of all
-            sizes.
+            and provide cyber security consulting for businesses of all sizes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

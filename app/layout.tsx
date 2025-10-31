@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Code_Pro } from "next/font/google";
+import { Source_Code_Pro, Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 
 const sourceCodePro = Source_Code_Pro({
@@ -7,10 +7,15 @@ const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
 });
 
+const pixelifySans = Pixelify_Sans({
+  variable: "--font-pixelify-sans",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "FrostByte Inc. - Professional Web Development Services",
+  title: "FrostByte Inc. - Professional IT Services",
   description:
-    "FrostByte Inc. provides professional web development services, custom software solutions, and digital transformation consulting.",
+    "FrostByte Inc. provides professional IT services, including web development, custom software solutions, and cyber security consulting.",
 };
 
 export default function RootLayout({
@@ -28,7 +33,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${sourceCodePro.variable} antialiased min-h-screen flex flex-col`}
+        className={`${sourceCodePro.variable} ${pixelifySans.variable} antialiased min-h-screen flex flex-col`}
       >
         <main className="flex-1 w-full">{children}</main>
       </body>

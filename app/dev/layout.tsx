@@ -19,7 +19,7 @@ export default function DevLayout({
       <footer className="border-t border-gray-700 py-4">
         <div className="container mx-auto text-center">
           <p>
-            &copy; {new Date().getFullYear()} FrostByte Dev. All rights
+            &copy; {new Date().getFullYear()} FrostByte Inc. All rights
             reserved.
           </p>
         </div>
