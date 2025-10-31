@@ -14,12 +14,12 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: '/poling/:path*',
-        destination: 'https://poling-wedding-site.vercel.app/:path*',
+        source: "/poling/:path*",
+        destination: "https://poling-wedding-site.vercel.app/:path*",
       },
       {
-        source: '/client2/:path*',
-        destination: 'https://client2-portfolio.vercel.app/:path*',
+        source: "/client2/:path*",
+        destination: "https://client2-portfolio.vercel.app/:path*",
       },
     ];
   },
