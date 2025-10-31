@@ -65,21 +65,23 @@ export default function Home() {
       </div>
       {/* Posts Section */}
       <div className="w-full flex flex-col justify-center items-center mb-12">
-        <Post
-          title="_About Me"
-          desc='Learn more about me under the "_about-me" tab'
-          link="/dev/aboutme"
-        />
-        <Post
-          title="_Projects"
-          desc='Check out some of my projects under the "_projects" tab'
-          link="/dev/projects"
-        />
-        <Post
-          title="_Contact Me"
-          desc='Feel free to reach out via the "_contact-me" tab'
-          link="/dev/contact"
-        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full">
+          <Post
+            title="_About Me"
+            desc='Learn more about me under the "_about-me" tab'
+            link="/dev/aboutme"
+          />
+          <Post
+            title="_Projects"
+            desc='Check out some of my projects under the "_projects" tab'
+            link="/dev/projects"
+          />
+          <Post
+            title="_Contact Me"
+            desc='Feel free to reach out via the "_contact-me" tab'
+            link="/dev/contact"
+          />
+        </div>
       </div>
     </div>
   );
