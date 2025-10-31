@@ -1,0 +1,27 @@
+{
+  "rewrites": [
+    {
+      "source": "/poling/:path*",
+      "destination": "https://poling-wedding-abc123.vercel.app/:path*"
+    },
+    {
+      "source": "/client2/:path*",
+      "destination": "https://client2-portfolio-def456.vercel.app/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options", 
+          "value": "DENY"
+        }
+      ]
+    }
+  ]
+}

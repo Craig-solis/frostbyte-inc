@@ -54,9 +54,9 @@ Visit: `http://localhost:3000/dev/contact`
 2. **Connect GitHub**: Link your GitHub account
 3. **Import Project**: Select your `frostbyte-dev` repository
 4. **Add Environment Variables** in Vercel dashboard:
-   - `SMTP_AUTH_EMAIL=craig.solis@frostbyte-inc.com`
-   - `SMTP_AUTH_PASSWORD=Katana54!!`
-   - `SMTP_FROM_EMAIL=webservices@frostbyte-inc.com`
+   - `SMTP_AUTH_EMAIL=c****@frostbyte-inc.com`
+   - `SMTP_AUTH_PASSWORD=******************`
+   - `SMTP_FROM_EMAIL=w******@frostbyte-inc.com`
 5. **Deploy**: Vercel auto-deploys from GitHub pushes
 
 ### Option 2: Netlify Functions
