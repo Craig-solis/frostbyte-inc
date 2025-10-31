@@ -1,5 +1,5 @@
 "use client";
-import "../globals.css";
+import "../../globals.css";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -9,11 +9,11 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const leftNavLinks = [
-    { href: "/", label: "_home" },
-    { href: "/aboutme", label: "_about-me" },
-    { href: "/projects", label: "_projects" },
+    { href: "/dev", label: "_home" },
+    { href: "/dev/aboutme", label: "_about-me" },
+    { href: "/dev/projects", label: "_projects" },
   ];
-  const rightNavLink = { href: "/contact", label: "_contact-me" };
+  const rightNavLink = { href: "/dev/contact", label: "_contact-me" };
 
   const pathname = usePathname();
   return (
