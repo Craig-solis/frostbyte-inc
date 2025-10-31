@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro, Pixelify_Sans } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const sourceCodePro = Source_Code_Pro({
   variable: "--font-source-code-pro",
@@ -36,6 +37,7 @@ export default function RootLayout({
         className={`${sourceCodePro.variable} ${pixelifySans.variable} antialiased min-h-screen flex flex-col`}
       >
         <main className="flex-1 w-full">{children}</main>
+        <Analytics />
       </body>
     </html>
   );
