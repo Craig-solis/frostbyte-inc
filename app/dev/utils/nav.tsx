@@ -13,7 +13,10 @@ export default function Nav() {
     { href: "/dev/aboutme", label: "_about-me" },
     { href: "/dev/projects", label: "_projects" },
   ];
-  const rightNavLink = { href: "/dev/contact", label: "_contact-me" };
+  const rightNavLinks = [
+    { href: "/dev/contact", label: "_contact-me" },
+    { href: "/", label: "_return-main" },
+  ];
 
   const pathname = usePathname();
   return (
@@ -40,28 +43,34 @@ export default function Nav() {
               className={
                 pathname === link.href
                   ? "text-[var(--text-active)] font-bold text-glow-active"
-                  : "text-[var(--text-primary)] hover:[var(--text-active)]"
+                  : "text-[var(--text-primary)] hover:text-[var(--text-active)] transition-colors"
               }
             >
               {link.label}
             </Link>
           </li>
         ))}
-        <li
-          key={rightNavLink.href}
-          className="h-full flex items-center justify-center px-6 border-l border-[var(--greyed)] ml-auto"
-        >
-          <Link
-            href={rightNavLink.href}
-            className={
-              pathname === rightNavLink.href
-                ? "text-[var(--text-active)] font-bold text-glow-active"
-                : "text-[var(--text-primary)] hover:[var(--text-active)]"
-            }
+        {rightNavLinks.map((link, index) => (
+          <li
+            key={link.href}
+            className={`h-full flex items-center justify-center px-6 ${
+              index === 0
+                ? "border-l border-[var(--greyed)] ml-auto"
+                : "border-l border-[var(--greyed)]"
+            }`}
           >
-            {rightNavLink.label}
-          </Link>
-        </li>
+            <Link
+              href={link.href}
+              className={
+                pathname === link.href
+                  ? "text-[var(--text-active)] font-bold text-glow-active"
+                  : "text-[var(--text-primary)] hover:text-[var(--text-active)] transition-colors"
+              }
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
       </ul>
       {/* Hamburger button for mobile */}
       <button
@@ -108,26 +117,28 @@ export default function Nav() {
               className={
                 pathname === link.href
                   ? "text-[var(--text-active)] font-bold text-glow-active"
-                  : "text-[var(--text-primary)] hover:[var(--text-active)]"
+                  : "text-[var(--text-primary)] hover:text-[var(--text-active)] transition-colors"
               }
             >
               {link.label}
             </Link>
           </li>
         ))}
-        <li key={rightNavLink.href} className="px-6 py-3">
-          <Link
-            href={rightNavLink.href}
-            onClick={() => setMenuOpen(false)}
-            className={
-              pathname === rightNavLink.href
-                ? "text-blue-500 font-bold"
-                : "text-gray-300 hover:text-blue-400"
-            }
-          >
-            {rightNavLink.label}
-          </Link>
-        </li>
+        {rightNavLinks.map((link) => (
+          <li key={link.href} className="px-6 py-3">
+            <Link
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className={
+                pathname === link.href
+                  ? "text-[var(--text-active)] font-bold text-glow-active"
+                  : "text-[var(--text-primary)] hover:text-[var(--text-active)] transition-colors"
+              }
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
