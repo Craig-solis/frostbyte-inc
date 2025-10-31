@@ -33,7 +33,7 @@ export default function ContactPage() {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -52,8 +52,8 @@ export default function ContactPage() {
             Me
           </h1>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Ready to start your next project? Let's discuss how I can help bring
-            your ideas to life.
+            Ready to start your next project? Let&apos;s discuss how I can help
+            bring your ideas to life.
           </p>
         </div>
 
@@ -130,7 +130,7 @@ export default function ContactPage() {
                   htmlFor="name"
                   className="block text-sm font-medium text-[var(--text-primary)] mb-2"
                 >
-                  Name 
+                  Name
                 </label>
                 <input
                   type="text"
@@ -149,7 +149,7 @@ export default function ContactPage() {
                   htmlFor="email"
                   className="block text-sm font-medium text-[var(--text-primary)] mb-2"
                 >
-                  Email 
+                  Email
                 </label>
                 <input
                   type="email"
@@ -168,7 +168,7 @@ export default function ContactPage() {
                   htmlFor="subject"
                   className="block text-sm font-medium text-[var(--text-primary)] mb-2"
                 >
-                  Subject 
+                  Subject
                 </label>
                 <input
                   type="text"
@@ -187,7 +187,7 @@ export default function ContactPage() {
                   htmlFor="message"
                   className="block text-sm font-medium text-[var(--text-primary)] mb-2"
                 >
-                  Message 
+                  Message
                 </label>
                 <textarea
                   id="message"
@@ -212,7 +212,7 @@ export default function ContactPage() {
               {submitStatus === "success" && (
                 <div className="p-4 bg-green-900/20 border border-green-500 rounded-lg">
                   <p className="text-green-400">
-                    Message sent successfully! I'll get back to you soon.
+                    Message sent successfully! I&apos;ll get back to you soon.
                   </p>
                 </div>
               )}
